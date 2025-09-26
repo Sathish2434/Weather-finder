@@ -3,45 +3,182 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather Finder</title>
+    <title>Climate Sync - Weather App</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="card">
-      <div class="search">
-        <input type="text" placeholder="Enter City Name" spellcheck="false" />
-        <button>
-          <img src="search.png" alt="search" />
-        </button>
+    <div class="app-container">
+      <!-- Search Bar -->
+      <div class="search-container">
+        <div class="search">
+          <input type="text" placeholder="Enter City Name" spellcheck="false" />
+          <button>
+            <img src="search.png" alt="search" />
+          </button>
+        </div>
+        <div class="error">
+          <p>Invalid City Name</p>
+        </div>
       </div>
-      <div class="error">
-        <p>Invalid City Name</p>
-      </div>
-      <div class="weather">
-        <img src="rain.png" class="weather-icon" />
-        <h1 class="temp">22°C</h1>
-        <h2 class="city">NewYork</h2>
-        <div class="details">
-          <div class="col">
-            <img src="humidity.png" alt="#" />
-            <div>
-              <p class="humidity">50%</p>
-              <p>Humidity</p>
+
+      <!-- Main Weather Dashboard -->
+      <div class="weather-dashboard">
+        <!-- Main Current Weather Panel -->
+        <div class="main-weather-panel">
+          <div class="weather-icon-large">
+            <img src="rain.png" alt="weather" />
+          </div>
+          <div class="weather-description">Thunder</div>
+          <div class="current-temp">23°</div>
+          <div class="temp-range">H:25° L:14°</div>
+          <div class="weather-details">
+            <div class="detail-item">
+              <div class="detail-icon">💨</div>
+              <div class="detail-text">9km/h Wind</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-icon">🌧️</div>
+              <div class="detail-text">17% Chance of Rain</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-icon">💧</div>
+              <div class="detail-text">39% Humidity</div>
             </div>
           </div>
-            <div>
-              <p class="wind">12KM/hr</p>
-              <p>Wind speed</p>
-              <img src="wind.png" alt="#" />
+        </div>
+
+        <!-- Current Conditions Summary -->
+        <div class="current-conditions-panel">
+          <div class="weather-icon-small">
+            <img src="wind.png" alt="weather" />
+          </div>
+          <div class="temp-small">19°</div>
+          <div class="feels-like">Feels like: 15°</div>
+          <div class="condition-text">Windy</div>
+        </div>
+
+        <!-- Tomorrow's Forecast -->
+        <div class="tomorrow-panel">
+          <div class="panel-title">Tomorrow</div>
+          <div class="weather-icon-small">
+            <img src="rain.png" alt="weather" />
+          </div>
+          <div class="temp-range-small">19°/19°</div>
+          <div class="condition-text">Light Rain</div>
+        </div>
+
+        <!-- Hourly Forecast -->
+        <div class="hourly-forecast-panel">
+          <div class="panel-title">Hourly Forecast</div>
+          <div class="hourly-chart">
+            <div class="hour-item">
+              <div class="hour-time">Now</div>
+              <div class="hour-icon">🌧️</div>
+              <div class="hour-temp">25°</div>
+            </div>
+            <div class="hour-item">
+              <div class="hour-time">14:00</div>
+              <div class="hour-icon">🌧️</div>
+              <div class="hour-temp">26°</div>
+            </div>
+            <div class="hour-item">
+              <div class="hour-time">15:00</div>
+              <div class="hour-icon">🌧️</div>
+              <div class="hour-temp">23°</div>
+            </div>
+            <div class="hour-item">
+              <div class="hour-time">16:00</div>
+              <div class="hour-icon">⛅</div>
+              <div class="hour-temp">24°</div>
+            </div>
+            <div class="hour-item">
+              <div class="hour-time">17:00</div>
+              <div class="hour-icon">☀️</div>
+              <div class="hour-temp">21°</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weather Icons Grid -->
+        <div class="weather-icons-grid">
+          <div class="icon-item">☀️</div>
+          <div class="icon-item">⛅</div>
+          <div class="icon-item">🌧️</div>
+          <div class="icon-item">⛈️</div>
+          <div class="icon-item">❄️</div>
+          <div class="icon-item">🌫️</div>
+          <div class="icon-item">🌪️</div>
+          <div class="icon-item">🌤️</div>
+        </div>
+
+        <!-- Daily Forecast Cards -->
+        <div class="daily-cards">
+          <div class="daily-card">
+            <div class="day-temp">5°</div>
+            <div class="day-icon">❄️</div>
+            <div class="day-condition">Snowy and windy</div>
+            <div class="day-name">Friday</div>
+          </div>
+          <div class="daily-card">
+            <div class="day-temp">28°</div>
+            <div class="day-icon">☀️</div>
+            <div class="day-condition">Sunny</div>
+            <div class="day-name">Saturday</div>
+          </div>
+        </div>
+
+        <!-- Weekly Forecast -->
+        <div class="weekly-forecast-panel">
+          <div class="panel-title">7-Day Forecast</div>
+          <div class="weekly-list">
+            <div class="weekly-item">
+              <div class="weekly-icon">💨</div>
+              <div class="weekly-day">Sun</div>
+              <div class="weekly-condition">Windy</div>
+              <div class="weekly-temp">19° 7°</div>
+            </div>
+            <div class="weekly-item">
+              <div class="weekly-icon">🌧️</div>
+              <div class="weekly-day">Mon</div>
+              <div class="weekly-condition">Heavy rain</div>
+              <div class="weekly-temp">17° 8°</div>
+            </div>
+            <div class="weekly-item">
+              <div class="weekly-icon">⛅</div>
+              <div class="weekly-day">Tue</div>
+              <div class="weekly-condition">Mostly cloudy</div>
+              <div class="weekly-temp">20° 9°</div>
+            </div>
+            <div class="weekly-item">
+              <div class="weekly-icon">⛈️</div>
+              <div class="weekly-day">Wed</div>
+              <div class="weekly-condition">Thunderstorm</div>
+              <div class="weekly-temp">18° 6°</div>
+            </div>
+            <div class="weekly-item">
+              <div class="weekly-icon">🌤️</div>
+              <div class="weekly-day">Thu</div>
+              <div class="weekly-condition">Sunny with fog</div>
+              <div class="weekly-temp">22° 10°</div>
+            </div>
+            <div class="weekly-item">
+              <div class="weekly-icon">❄️</div>
+              <div class="weekly-day">Fri</div>
+              <div class="weekly-condition">Snowy</div>
+              <div class="weekly-temp">5° -2°</div>
+            </div>
+            <div class="weekly-item">
+              <div class="weekly-icon">☀️</div>
+              <div class="weekly-day">Sat</div>
+              <div class="weekly-condition">Sunny</div>
+              <div class="weekly-temp">28° 15°</div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- api  57b0766d3e55cde643aaa07f94391c08 -->
-    <!-- api key -->
-    <!-- https://api.openweathermap.org/data/2.5/weather?q=germany&appid=57b0766d3e55cde643aaa07f94391c08 -->
-    <!-- https://api.openweathermap.org/data/2.5/weather?q=germany&appid=57b0766d3e55cde643aaa07f94391c08&units=metric -->
+
     <script src="script.js"></script>
   </body>
 </html>
